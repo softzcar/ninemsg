@@ -92,6 +92,10 @@
     </div>
 
     <script>
+	// const URL = 'http://localhost:3000';
+	const URL = 'https://ninesysmsg.netlify.app';
+	// const URL = 'https://ninemsg.onrender.com';
+
         document.getElementById('whatsappForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -105,7 +109,7 @@
                 message: message
             };
 
-            fetch('https://ninemsg.onrender.com/send-message', {
+            fetch(`${URL}/send-message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
