@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const bodyParser = require('body-parser');
+const serverless = require('serverless-http');
+
 const app = express();
 const routes = require('./routes/index');
 
@@ -18,3 +20,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
+module.exports.handler = serverless(app); // Exportar la función handler
