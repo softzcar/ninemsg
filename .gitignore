@@ -131,3 +131,5 @@ dist
 
 # Cache de whatsapp
 .wwebjs_cache/
+# Local Netlify folder
+.netlify

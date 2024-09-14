@@ -1,4 +1,6 @@
 const express = require('express');
+const serverless = require('serverless-http');
+const app = express();
 const router = express.Router();
 const authController = require('../controllers/authController');
 const whatsappController = require('../controllers/whatsappController');
@@ -25,5 +27,7 @@ router.get('/qr', whatsappController.showQRCode);
 // Ruta para enviar un mensaje
 router.post('/send-message', whatsappController.sendMessage);
 
-module.exports = router;
+app.use('/.netlify/functions/api', router);
+module.exports.handler = serverless(app);
+// module.exports = router;
 
