@@ -27,7 +27,7 @@ router.get('/qr', whatsappController.showQRCode);
 
 // Ruta para enviar un mensaje
 router.post('/send-message', whatsappController.sendMessage);
-q
+
 // app.use('/.netlify/functions/api', router);
 // app.use('/.netlify/routes/index', router);
 // module.exports.handler = serverless(app);
